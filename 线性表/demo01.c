@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include "sqlist.h"
 
 int main()
 {
     /* code */
-    printf("hello world\n");
+    sqlink list = list_create();
+    int a = list_clear(list);
+    printf("%d\n", a);
     return 0;
 }
