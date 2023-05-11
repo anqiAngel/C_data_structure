@@ -5,7 +5,10 @@ int main()
 {
     /* code */
     sqlink list = list_create();
-    int a = list_clear(list);
-    printf("%d\n", a);
+    int a = list_insert(list, 10, 0);
+    printf("%d\n", list_empty(list));
+    list_show(list);
+    free(list);
+    list = NULL;
     return 0;
 }
