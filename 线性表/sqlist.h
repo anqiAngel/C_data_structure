@@ -27,5 +27,7 @@ int list_length(sqlink L);
 int list_locate(sqlink L, data_type value);
 // 顺序表插入
 int list_insert(sqlink L, data_type value, int index);
-// 顺序表数量
+// 顺序表元素打印
 int list_show(sqlink L);
+// 顺序表销毁
+int list_delete(sqlink L);

@@ -95,7 +95,7 @@ int list_insert(sqlink L, data_type value, int index)
     return 0;
 }
 
-// 数据打印
+// 顺序表数据打印
 int list_show(sqlink L)
 {
     if (L == NULL)
@@ -108,5 +108,16 @@ int list_show(sqlink L)
         /* code */
         printf("%d ",L->data[i]);
     }
+    return 0;
+}
+// 顺序表销毁
+int list_delete(sqlink L){
+    if (L == NULL)
+    {
+        /* code */
+        return -1;
+    }
+    free(L);
+    L = NULL;
     return 0;
 }
