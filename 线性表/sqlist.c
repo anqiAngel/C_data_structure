@@ -101,17 +101,85 @@ int list_show(sqlink L)
     if (L == NULL)
     {
         /* code */
-        return -1;   
+        return -1;
     }
     for (int i = 0; i <= L->last; i++)
     {
         /* code */
-        printf("%d ",L->data[i]);
+        printf("%d ", L->data[i]);
+    }
+    printf("\n");
+    return 0;
+}
+// 删除指定位置的元素
+int list_delete(sqlink L, int index)
+{
+    if (L->last == -1)
+    {
+        /* code */
+        return -1;
+    }
+    if (index < 0 || index > L->last)
+    {
+        /* code */
+        printf("index out of range\n");
+        return -1;
+    }
+    for (int i = index; i <= L->last; i++)
+    {
+        /* code */
+        L->data[i] = L->data[i + 1];
+    }
+    L->last--;
+    return 0;
+}
+// 求顺序表并集
+int list_merge(sqlink L1, sqlink L2)
+{
+    int i = 0;
+    int ret = 0;
+    while (i <= L2->last)
+    {
+        /* code */
+        if (list_locate(L1, L2->data[i]) == -1)
+        {
+            /* code */
+            if (list_insert(L1, L2->data[i], L1->last + 1) == -1)
+            {
+                return -1;
+            }
+        }
+        i++;
+    }
+    return 0;
+}
+// 留下每一类元素最后出现的
+// 顺序表去重
+int list_purge(sqlink L)
+{
+    if (L->last == 0)
+    {
+        /* code */
+        return 0;
+    }
+    for (int j = 1; j <= L->last; j++)
+    {
+        /* code */
+        for (int i = j - 1; i >= 0; i--)
+        {
+            /* code */
+            if (L->data[i] == L->data[j])
+            {
+                /* code */
+                list_delete(L, i);
+            }
+        }
     }
     return 0;
 }
 // 顺序表销毁
-int list_delete(sqlink L){
+int list_free(sqlink L)
+{
     if (L == NULL)
     {
         /* code */
