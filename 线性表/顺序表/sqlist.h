@@ -1,3 +1,5 @@
+#ifndef _SQLIST_H
+#define _SQLIST_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,3 +39,5 @@ int list_merge(sqlink L1, sqlink L2);
 int list_purge(sqlink L);
 // 顺序表销毁
 int list_free(sqlink L);
+
+#endif 
