@@ -22,5 +22,15 @@ int main()
     Slist_Show(single_linklist);
     Slist_Insert(single_linklist, 10, 2);
     Slist_Show(single_linklist);
+    // Slist_Delete(single_linklist,2);
+    // Slist_Delete(single_linklist,0);
+    Slist_Delete(single_linklist,-3);
+    Slist_Show(single_linklist);
+    Slist_Converse(single_linklist);
+    Slist_Show(single_linklist);
+    Slist_Free(single_linklist);
+    single_linklist = NULL;
+    printf("ÊÍ·ÅÍê±Ï!!!\n");
+    Slist_Show(single_linklist);
     return 0;
 }

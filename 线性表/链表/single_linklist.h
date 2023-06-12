@@ -20,6 +20,12 @@ LinkList Slist_Get(LinkList head,int index);
 int Slist_Tail_Insert(LinkList head, data_type value);
 // 4.单链表任意位置插入
 int Slist_Insert(LinkList head, data_type value,int index);
-// 5.单链表遍历
+// 5.单链表任意位置删除
+int Slist_Delete(LinkList head, int index);
+// 6.单链表的删除释放
+int Slist_Free(LinkList head);
+// 7.单链表的反转
+int Slist_Converse(LinkList head);
+// 单链表遍历
 int Slist_Show(LinkList head);
 #endif
