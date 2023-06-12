@@ -11,7 +11,6 @@ typedef struct Node
     data_type data;
     struct Node *next;
 } ListNode,*LinkList;
-
 // 1.单链表创建
 LinkList Single_Linklist_Create(void);
 // 2.单链表获取指定结点指针
