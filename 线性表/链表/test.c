@@ -38,7 +38,8 @@ int main()
         Slist_Tail_Insert(single_linklist1, value);
     }
     Slist_Show(single_linklist1);
-    Slist_Merge(single_linklist, single_linklist1);
+    // Slist_Merge1(single_linklist, single_linklist1);
+    Slist_Merge2(single_linklist, single_linklist1);
     single_linklist1 = NULL;
     printf("合并结果:");
     Slist_Show(single_linklist);

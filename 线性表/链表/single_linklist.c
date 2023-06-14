@@ -258,8 +258,8 @@ LinkList Slist_Two_Sum_Max(LinkList head)
     return max_ptr;
 }
 
-// 9.合并两个有序的单链表
-int Slist_Merge(LinkList head1, LinkList head2)
+// 9.合并两个有序的单链表1
+int Slist_Merge1(LinkList head1, LinkList head2)
 {
     if (!head1 || !head2)
     {
@@ -302,7 +302,8 @@ int Slist_Merge(LinkList head1, LinkList head2)
         {
             /* code */
             r = r;
-        }else
+        }
+        else
         {
             /* code */
             r = r->next;
@@ -314,5 +315,56 @@ int Slist_Merge(LinkList head1, LinkList head2)
     q = NULL;
     s = NULL;
     r = NULL;
+    return 0;
+}
+
+// 10.合并两个有序的单链表2
+int Slist_Merge2(LinkList head1, LinkList head2)
+{
+    if (!head1 || !head2)
+    {
+        /* code */
+        return -1;
+    }
+    if (head1->next == NULL || head2->next == NULL)
+    {
+        /* code */
+        return -1;
+    }
+    LinkList p = head1->next;
+    LinkList q = head2->next;
+    head1->next = NULL;
+    head2->next = NULL;
+    LinkList s = head1;
+    while (p != NULL && q != NULL)
+    {
+        /* code */
+        if (p->data <= q->data)
+        {
+            /* code */
+            s->next = p;
+            p = p->next;
+            s = s->next;
+            s->next = NULL;
+        }
+        else
+        {
+            /* code */
+            s->next = q;
+            q = q->next;
+            s = s->next;
+            s->next = NULL;
+        }
+    }
+    if (p != NULL)
+    {
+        /* code */
+        s->next = p;
+    }
+    if (q != NULL)
+    {
+        /* code */
+        s->next = q;
+    }
     return 0;
 }

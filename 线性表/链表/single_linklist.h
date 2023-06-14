@@ -27,8 +27,10 @@ int Slist_Free(LinkList head);
 int Slist_Converse(LinkList head);
 // 8.求单链表相邻两结点之和最大的第一个结点的指针
 LinkList Slist_Two_Sum_Max(LinkList head);
-// 9.合并两个有序的单链表
-int Slist_Merge(LinkList head,LinkList head2);
+// 9.合并两个有序的单链表1
+int Slist_Merge1(LinkList head1,LinkList head2);
+// 10.合并两个有序的单链表2
+int Slist_Merge2(LinkList head1,LinkList head2);
 // 单链表遍历
 int Slist_Show(LinkList head);
 #endif
