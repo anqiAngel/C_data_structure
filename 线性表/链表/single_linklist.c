@@ -165,6 +165,7 @@ int Slist_Delete(LinkList head, int index)
         printf("删除的是%d\n", s->data);
         free(s);
         s = NULL;
+        return 0;
     }
 }
 
@@ -216,4 +217,102 @@ int Slist_Converse(LinkList head)
         p->next = NULL;
         return 0;
     }
+}
+
+// 8.求单链表相邻两结点之和最大的第一个结点的指针
+LinkList Slist_Two_Sum_Max(LinkList head)
+{
+    if (!head)
+    {
+        /* code */
+        return NULL;
+    }
+    if (head->next == NULL)
+    {
+        /* code */
+        return NULL;
+    }
+    if (head->next->next == NULL)
+    {
+        /* code */
+        return head->next;
+    }
+    LinkList p = head->next;
+    LinkList s = p->next;
+    int max = 0;
+    int sum = 0;
+    LinkList max_ptr = p;
+    while (s != NULL)
+    {
+        /* code */
+        sum = p->data + s->data;
+        if (sum >= max)
+        {
+            /* code */
+            max = sum;
+            max_ptr = p;
+        }
+        p = s;
+        s = p->next;
+    }
+    return max_ptr;
+}
+
+// 9.合并两个有序的单链表
+int Slist_Merge(LinkList head1, LinkList head2)
+{
+    if (!head1 || !head2)
+    {
+        /* code */
+        return -1;
+    }
+    if (head1->next == NULL || head2->next == NULL)
+    {
+        /* code */
+        return -1;
+    }
+    // 1中的结点指针
+    LinkList p = head1->next;
+    // 2记录前一个元素的指针
+    LinkList s = head1;
+    // 2中的结点指针
+    LinkList q = head2->next;
+    // 记录2中的下一个结点
+    LinkList r = q->next;
+    while (q != NULL)
+    {
+        /* code */
+        while (p != NULL && p->data <= q->data)
+        {
+            /* code */
+            s = p;
+            p = p->next;
+        }
+        if (p == NULL)
+        {
+            /* code */
+            s->next = q;
+            break;
+        }
+        q->next = p;
+        s->next = q;
+        p = q;
+        q = r;
+        if (r == NULL)
+        {
+            /* code */
+            r = r;
+        }else
+        {
+            /* code */
+            r = r->next;
+        }
+        printf("插入成功!!!\n");
+    }
+    free(head2);
+    p = NULL;
+    q = NULL;
+    s = NULL;
+    r = NULL;
+    return 0;
 }
