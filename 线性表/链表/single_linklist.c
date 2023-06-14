@@ -366,5 +366,9 @@ int Slist_Merge2(LinkList head1, LinkList head2)
         /* code */
         s->next = q;
     }
+    free(head2);
+    p = NULL;
+    q = NULL;
+    s = NULL;
     return 0;
 }
